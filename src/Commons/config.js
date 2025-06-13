@@ -1,9 +1,10 @@
+/* istanbul ignore file */
 const dotenv = require('dotenv');
 const path = require('path');
- 
+
 if (process.env.NODE_ENV === 'test') {
   dotenv.config({
-    path: path.resolve(process.cwd(), '.test.env')
+    path: path.resolve(process.cwd(), '.test.env'),
   });
 } else {
   dotenv.config();
@@ -23,5 +24,5 @@ const config = {
     database: process.env.PGDATABASE,
   },
 };
- 
+
 module.exports = config;
